@@ -139,9 +139,6 @@ alias brew-file="brew bundle dump --file=~/.config/Brewfile --force"
 # Open finder (like windows)
 alias finder="open -a Finder"
 
-# Flush DNS
-alias flushdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
-
 
 ######################
 
@@ -155,27 +152,12 @@ wttr() {
     curl "https://wttr.in/${1:-sherbrooke}"
 }
 
-chrome() {
-  open https://www.gmail.com
-  open https://calendar.google.com/
-  open https://keep.google.com/
-  open https://ti.beauvoir.ca/
-}
-
 ip () {
   # List all IP addresses
   for ((i = 0; i < 10; i++)); 
   do
     ifconfig -a | egrep -A 7 "^en$i" | grep inet | grep -oE '((1?[0-9][0-9]?|2[0-4][0-9]|25[0-5])\.){3}(1?[0-9][0-9]?|2[0-4][0-9]|25[0-5])' | head -n 1
   done
-}
-
-pms () {
-  # Open Pharmascience websites
-  open https://services-professionnels.pharmascience.com/ 
-  open https://pendopharm.com/
-  open https://carrieres.pharmascience.com/
-  open https://www.pharmascience.com/
 }
 
 giturl () {
